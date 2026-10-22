@@ -16,19 +16,19 @@ df["smoker"] = df["smoker"].map({"yes": 0, "no": 1})
 
 
 # Features (X) and Target (y)
-#X = df[["age", "sex", "bmi", "children", "smoker", "region"]]
-#y = df["charges"]
+X = df[["age", "sex", "bmi", "children", "smoker", "region"]]
+y = df["charges"]
 
 # Split data into training and testing sets (80% train, 20% test)
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Train Linear Regression Model
-#model = LinearRegression()
-#model.fit(X_train, y_train)
+model = LinearRegression()
+model.fit(X_train, y_train)
 
 # Save model to a .pkl file
-#with open("model.pkl", "wb") as file:
- #   pickle.dump(model, file)
+with open("model.pkl", "wb") as file:
+    pickle.dump(model, file)
 
-#print("Model trained and saved as model.pkl!")
+print("Model trained and saved as model.pkl!")
 
