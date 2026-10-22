@@ -15,12 +15,12 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
     # Get form data
-    age = float(request.form["xxxxxxxxxxxxx"])
-    sex = 1 if request.form["xxxxxxxxxxxxxx"] == "male" else 0
-    bmi = float(request.form["xxxxxxxxxxxxx"])
-    children = int(request.form["xxxxxxxxxxxxxx"])
-    smoker = 1 if request.form["xxxxxxxxxxxxxx"] == "no" else 0
-    region = int(request.form["xxxxxxxxxxxxxxx"])
+    age = float(request.form["age"])
+    sex = 1 if request.form["sex"] == "male" else 0
+    bmi = float(request.form["bmi"])
+    children = int(request.form["children"])
+    smoker = 1 if request.form["smoker"] == "no" else 0
+    region = int(request.form["region"])
 
     # Prepare features for prediction
    
