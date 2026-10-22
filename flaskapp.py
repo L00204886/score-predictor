@@ -1,11 +1,13 @@
 import pickle
 import pandas as pd
 import numpy as np
+import pickle
+import pandas as pd
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-# Load the trained model
+# Load the trained student performance model
 model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/")
@@ -29,13 +31,12 @@ def predict():
 
     # Predict charges
     prediction = model.predict(features)
-    #  Format to float and 2 decimal places
-    formatted_prediction = f"The predicted value is ${round(float(prediction), 2)}"
 
+    # Format the prediction output
+    formatted_prediction = f"The predicted student performance score is: {round(float(prediction), 2)}"
 
     return render_template("result.html", prediction=formatted_prediction)
 
 
 if __name__ == "__main__":
-    app.run(debug=True,host='0.0.0.0')
-
+    app.run(debug=True, host='0.0.0.0')
